@@ -130,6 +130,11 @@ const baseStyles = {
   fontFamily: fontAthletics,
 };
 
+const h2styles = {
+  borderBottom: "0.0625rem solid #ccc",
+  marginTop: "2em",
+};
+
 const nameStyles = {
   color: "#e4526d",
   fontSize: "1.5rem",
@@ -144,10 +149,10 @@ const pronounStyles = {
 };
 
 const titleStyles = {
-  fontSize: "1.375rem",
+  fontSize: "1.25rem",
   fontWeight: "400",
   fontFamily: fontAthletics,
-  color: "#003a3a",
+  // color: "#003a3a",
   margin: "0 0 1rem",
 };
 
@@ -158,11 +163,16 @@ const iconStyles = {
 };
 
 const linkStyles = {
-  color: "#333333",
+  color: "inherit",
   textDecoration: "none",
   display: "block",
   fontSize: "1.125rem",
   marginBottom: `0.25rem`,
+  fontFamily: fontAthletics,
+};
+
+const underlinedLinkStyles = {
+  textDecoration: "underline",
 };
 
 const lastLinkStyles = {
@@ -171,53 +181,118 @@ const lastLinkStyles = {
 
 const logoStyles = {
   width: "7.8125rem",
+  marginBottom: "1.5rem",
 };
+
+function copyCode(e, id) {
+  const button = e.target;
+
+  button.textContent = "Copied!";
+
+  setTimeout(() => {
+    button.textContent = "Copy as Code";
+  }, 2000);
+
+  const signature = document.getElementById(id).innerHTML;
+  navigator.clipboard.writeText(signature).then(
+    () => {
+      console.log("success");
+    },
+    () => {
+      console.log("fail");
+    }
+  );
+}
 
 const IndexPage = () => {
   return (
-    <main>
+    <main style={baseStyles}>
       <h1>Spruce Email Signatures</h1>
-      {people.map(({ fName, lName, pronouns, title, icon, linkedIn }) => (
-        <div
-          key={lName}
-          style={baseStyles}
-        >
-          <strong style={nameStyles}>
-            {fName} {lName} <span style={pronounStyles}>({pronouns})</span>
-          </strong>
-          <p style={titleStyles}>{title}</p>
-          <img
-            src={`https://sprucecreative.ca/wp-content/uploads/2023/05/icon-${icon}.png`}
-            style={iconStyles}
-          />
-          <a
-            style={linkStyles}
-            href={`mailto:${fName.toLowerCase()}@sprucecreative.ca`}
-          >
-            {fName.toLowerCase()}@sprucecreative.ca
-          </a>
-          {linkedIn && (
-            <a
-              style={linkStyles}
-              href={linkedIn}
-            >
-              Connect with me on LinkedIn
-            </a>
-          )}
-          <a
-            style={{ ...linkStyles, ...lastLinkStyles }}
-            href="https://sprucecreative.ca"
-          >
-            sprucecreative.ca
-          </a>
-          <img
-            style={logoStyles}
-            src="https://sprucecreative.ca/wp-content/uploads/2023/05/spruce-logo.png"
-            alt="Spruce Creative"
-          />
-          <div style={{ height: "100px" }}></div>
-        </div>
-      ))}
+      <section id="introduction">
+        <h2 style={h2styles}>Instructions</h2>
+        <h3>Gmail (in browsers)</h3>
+        <ol>
+          <li>
+            Go to settings gear icon {">"} <strong>See all settings</strong>{" "}
+            button
+          </li>
+          <li>
+            Scroll down to <strong>Signature</strong>
+          </li>
+          <li>
+            On this website, highlight all content from your signature from name
+            through logo.
+          </li>
+          <li>
+            Copy paste into signature edit box. All styling should copy over
+            properly.
+          </li>
+        </ol>
+        <h3>HTML Signature</h3>
+        <p>
+          Some email clients need the actual html to style properly. Follow
+          these easy steps
+        </p>
+        <ol>
+          <li>
+            Click the <strong>Copy as Code</strong> button for your signature,
+            it will add the html code to your clipboard
+          </li>
+          <li>Find the signature settings in your client</li>
+          <li>Paste it in code signature box if it exists</li>
+        </ol>
+        <p>
+          If you are not sure how to set it up for your specific email client,
+          check in with Adam and he will get you sorted.
+        </p>
+      </section>
+      <section id="signatures">
+        <h2 style={h2styles}>Signatures</h2>
+        {people.map(({ fName, lName, pronouns, title, icon, linkedIn }) => (
+          <div key={lName}>
+            <div id={lName}>
+              <strong style={nameStyles}>
+                {fName} {lName} <span style={pronounStyles}>({pronouns})</span>
+              </strong>
+              <p style={titleStyles}>{title}</p>
+              <img
+                src={`https://sprucecreative.ca/wp-content/uploads/2023/05/icon-${icon}.png`}
+                style={iconStyles}
+              />
+              <a
+                style={linkStyles}
+                href={`mailto:${fName.toLowerCase()}@sprucecreative.ca`}
+              >
+                {fName.toLowerCase()}@sprucecreative.ca
+              </a>
+              {linkedIn && (
+                <a
+                  style={{ ...linkStyles, ...underlinedLinkStyles }}
+                  href={linkedIn}
+                >
+                  Connect with me on LinkedIn
+                </a>
+              )}
+              <a
+                style={{ ...linkStyles, ...lastLinkStyles }}
+                href="https://sprucecreative.ca"
+              >
+                sprucecreative.ca
+              </a>
+              <a href="https://sprucecreative.ca">
+                <img
+                  style={logoStyles}
+                  src="https://sprucecreative.ca/wp-content/uploads/2023/05/spruce-logo-radish.png"
+                  alt="Spruce Creative"
+                />
+              </a>
+            </div>
+            <div style={{ height: "20px" }}></div>
+            <button onClick={(e) => copyCode(e, lName)}>Copy as Code</button>
+            <div style={{ height: "100px" }}></div>
+          </div>
+        ))}
+      </section>
     </main>
   );
 };
