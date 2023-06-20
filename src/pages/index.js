@@ -124,7 +124,7 @@ const people = [
 const fontAthletics =
   "Athletics, system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif";
 
-const fontLust = "Lust, Georgia, 'Times New Roman', Times, serif";
+const fontLust = "'Lust Text', Georgia, 'Times New Roman', Times, serif";
 
 const baseStyles = {
   fontFamily: fontAthletics,
@@ -139,7 +139,7 @@ const nameStyles = {
   color: "#e4526d",
   fontSize: "1.5rem",
   fontFamily: fontLust,
-  fontWeight: 500,
+  fontWeight: 400,
 };
 
 const pronounStyles = {
@@ -194,7 +194,9 @@ function copyCode(e, id) {
   }, 2000);
 
   const signature = document.getElementById(id).innerHTML;
-  navigator.clipboard.writeText(signature).then(
+
+  const cleanedSignature = signature.replaceAll("&quot;", "'");
+  navigator.clipboard.writeText(cleanedSignature).then(
     () => {
       console.log("success");
     },
@@ -251,41 +253,52 @@ const IndexPage = () => {
         {people.map(({ fName, lName, pronouns, title, icon, linkedIn }) => (
           <div key={lName}>
             <div id={lName}>
-              <strong style={nameStyles}>
-                {fName} {lName} <span style={pronounStyles}>({pronouns})</span>
-              </strong>
-              <p style={titleStyles}>{title}</p>
+              <div>
+                <strong style={nameStyles}>
+                  {`${fName} ${lName}`}{" "}
+                  <span style={pronounStyles}>({pronouns})</span>
+                </strong>
+                <p style={titleStyles}>{title}</p>
+              </div>
               <img
                 src={`https://sprucecreative.ca/wp-content/uploads/2023/05/icon-${icon}.png`}
                 style={iconStyles}
               />
-              <a
-                style={linkStyles}
-                href={`mailto:${fName.toLowerCase()}@sprucecreative.ca`}
-              >
-                {fName.toLowerCase()}@sprucecreative.ca
-              </a>
-              {linkedIn && (
+              <div>
                 <a
-                  style={{ ...linkStyles, ...underlinedLinkStyles }}
-                  href={linkedIn}
+                  style={linkStyles}
+                  href={`mailto:${fName.toLowerCase()}@sprucecreative.ca`}
                 >
-                  Connect with me on LinkedIn
+                  {fName.toLowerCase()}@sprucecreative.ca
                 </a>
+              </div>
+              {linkedIn && (
+                <div>
+                  <a
+                    style={{ ...linkStyles, ...underlinedLinkStyles }}
+                    href={linkedIn}
+                  >
+                    Connect with me on LinkedIn
+                  </a>
+                </div>
               )}
-              <a
-                style={{ ...linkStyles, ...lastLinkStyles }}
-                href="https://sprucecreative.ca"
-              >
-                sprucecreative.ca
-              </a>
-              <a href="https://sprucecreative.ca">
-                <img
-                  style={logoStyles}
-                  src="https://sprucecreative.ca/wp-content/uploads/2023/05/spruce-logo-radish.png"
-                  alt="Spruce Creative"
-                />
-              </a>
+              <div>
+                <a
+                  style={{ ...linkStyles, ...lastLinkStyles }}
+                  href="https://sprucecreative.ca"
+                >
+                  sprucecreative.ca
+                </a>
+              </div>
+              <div>
+                <a href="https://sprucecreative.ca">
+                  <img
+                    style={logoStyles}
+                    src="https://sprucecreative.ca/wp-content/uploads/2023/05/spruce-logo-radish.png"
+                    alt="Spruce Creative"
+                  />
+                </a>
+              </div>
             </div>
             <div style={{ height: "20px" }}></div>
             <button onClick={(e) => copyCode(e, lName)}>Copy as Code</button>
