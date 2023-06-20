@@ -113,7 +113,7 @@ const people = [
   {
     fName: "Sho",
     lName: "Sengupta",
-    pronouns: "he/him",
+    pronouns: "she/her/elle",
     title: "Senior Account Strategist",
     icon: 5,
     linkedIn: "https://www.linkedin.com/in/shohini-sho-sengupta/",
@@ -164,7 +164,7 @@ const iconStyles = {
 
 const linkStyles = {
   color: "inherit",
-  textDecoration: "none",
+  textDecoration: `none`,
   display: "block",
   fontSize: "1.125rem",
   marginBottom: `0.25rem`,
