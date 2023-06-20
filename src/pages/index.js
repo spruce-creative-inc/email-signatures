@@ -114,7 +114,7 @@ const people = [
     fName: "Sho",
     lName: "Sengupta",
     pronouns: "he/him",
-    title: "Communications & Account Strategist ",
+    title: "Senior Account Strategist",
     icon: 5,
     linkedIn: "https://www.linkedin.com/in/shohini-sho-sengupta/",
   },
