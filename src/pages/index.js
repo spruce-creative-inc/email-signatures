@@ -6,7 +6,7 @@ const people = [
     lName: "Robillard",
     pronouns: "he/him",
     title: "Web Designer & Developer",
-    icon: 1,
+    icon: 5,
     linkedIn: "https://www.linkedin.com/in/adam-robillard/",
   },
   {
@@ -14,7 +14,7 @@ const people = [
     lName: "McMillan",
     pronouns: "she/her",
     title: "Director of Brand Development",
-    icon: 2,
+    icon: 1,
     linkedIn: "https://www.linkedin.com/in/amanda-mcmillan-07339522/",
   },
   {
@@ -30,14 +30,14 @@ const people = [
     lName: "McCluskey",
     pronouns: "he/him",
     title: "Art Director",
-    icon: 4,
+    icon: 7,
   },
   {
     fName: "Cindy",
     lName: "MacBride",
     pronouns: "she/her",
     title: "Director of Client Experience",
-    icon: 5,
+    icon: 4,
     linkedIn: "https://www.linkedin.com/in/cindy-macbride-4a156226/",
   },
   {
@@ -69,7 +69,7 @@ const people = [
     lName: "Mathieu",
     pronouns: "he/him",
     title: "Writer & Project Manager",
-    icon: 2,
+    icon: 1,
     linkedIn: "https://www.linkedin.com/in/josephrmathieu/",
   },
   {
@@ -77,7 +77,7 @@ const people = [
     lName: "Collins",
     pronouns: "she/her",
     title: "Art Director",
-    icon: 3,
+    icon: 2,
     linkedIn: "https://www.linkedin.com/in/nadia-collins-00b66412/",
   },
   {
@@ -85,38 +85,37 @@ const people = [
     lName: "Jane Drystek",
     pronouns: "she/her",
     title: "Manager of Digital Communications",
-    icon: 4,
+    icon: 2,
     linkedIn: "https://www.linkedin.com/in/nina-jane-drystek-2211108b/",
-  },
-  {
-    fName: "Paul",
-    lName: "Marconi",
-    pronouns: "he/him",
-    title: "Partner & Creative Director",
-    icon: 5,
-    linkedIn: "https://www.linkedin.com/in/paulmarconi/",
   },
   {
     fName: "Pascal",
     lName: "Huot",
     pronouns: "he/him",
     title: "Creative Producer",
+    icon: 5,
+  },
+  {
+    fName: "Paul",
+    lName: "Marconi",
+    pronouns: "he/him",
+    title: "Partner & Creative Director",
     icon: 6,
+    linkedIn: "https://www.linkedin.com/in/paulmarconi/",
   },
   {
     fName: "Rose",
     lName: "Seto",
     pronouns: "she/her",
     title: "Web Developer",
-    icon: 7,
-    linkedIn: "https://www.linkedin.com/in/roseseto/",
+    icon: 4,
   },
   {
     fName: "Sho",
     lName: "Sengupta",
     pronouns: "he/him",
     title: "Communications & Account Strategist ",
-    icon: 1,
+    icon: 5,
     linkedIn: "https://www.linkedin.com/in/shohini-sho-sengupta/",
   },
 ];
@@ -158,6 +157,7 @@ const titleStyles = {
 
 const iconStyles = {
   width: "3.25rem",
+  height: "3.25rem",
   display: "block",
   marginBottom: "1rem",
 };
