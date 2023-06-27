@@ -261,13 +261,9 @@ const IndexPage = () => {
                 <p style={titleStyles}>{title}</p>
               </div>
               <img
-                src={`https://sprucecreative.ca/wp-content/themes/spruce/images/email-signature-images/icon-${icon}.svg`}
-                style={iconStyles}
-              />
-              {/* <img
                 src={`https://sprucecreative.ca/wp-content/uploads/2023/05/icon-${icon}.png`}
                 style={iconStyles}
-              /> */}
+              />
               <div>
                 <a
                   style={linkStyles}
@@ -298,14 +294,9 @@ const IndexPage = () => {
                 <a href="https://sprucecreative.ca">
                   <img
                     style={logoStyles}
-                    src="https://sprucecreative.ca/wp-content/themes/spruce/images/email-signature-images/spruce-logo-radish.svg"
-                    alt="Spruce Creative"
-                  />
-                  {/* <img
-                    style={logoStyles}
                     src="https://sprucecreative.ca/wp-content/uploads/2023/05/spruce-logo-radish.png"
                     alt="Spruce Creative"
-                  /> */}
+                  />
                 </a>
               </div>
             </div>
