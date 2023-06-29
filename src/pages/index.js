@@ -261,7 +261,7 @@ const IndexPage = () => {
                 <p style={titleStyles}>{title}</p>
               </div>
               <img
-                src={`https://sprucecreative.ca/wp-content/uploads/2023/05/icon-test.png`}
+                src={`https://sprucecreative.ca/wp-content/uploads/2023/05/icon-${icon}-300dpi.png`}
                 style={iconStyles}
               />
               {/* <img
@@ -298,14 +298,9 @@ const IndexPage = () => {
                 <a href="https://sprucecreative.ca">
                   <img
                     style={logoStyles}
-                    src="https://sprucecreative.ca/wp-content/uploads/2023/05/spruce-logo-radish-test.png"
+                    src="https://sprucecreative.ca/wp-content/uploads/2023/05/spuce-logo-radish-300dpi.png"
                     alt="Spruce Creative"
                   />
-                  {/* <img
-                    style={logoStyles}
-                    src="https://sprucecreative.ca/wp-content/uploads/2023/05/spruce-logo-radish.png"
-                    alt="Spruce Creative"
-                  /> */}
                 </a>
               </div>
             </div>
